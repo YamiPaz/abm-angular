@@ -1,0 +1,31 @@
+<h2>Detalle Provincia</h2> 
+
+<hr/>
+<div *ngIf="provincia">
+  <div>
+    <label><b>Provincia: </b></label> {{provincia.nombre}}
+  </div>
+  <div>
+    <label><b>Capital: </b></label> {{provincia.capital}}
+  </div>
+  <div>
+    <label><b>Población: </b></label> {{provincia.poblacion}}
+  </div>  
+  <div>
+    <label><b>Superficie: </b></label> {{provincia.superficie}}
+  </div> 
+  <div>
+    <label><b>Número de Departamentos: </b></label> {{provincia.nroDepartamentos}}
+  </div> 
+  <div>
+    <label><b>Abreviatura: </b></label> {{provincia.abreviatura}}
+  </div> 
+  <div>
+    <label><b>Bandera: </b></label> <img src="assets/img/{{provincia.bandera}}" alt="{{provincia.bandera}}">
+  </div> 
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Volver</button><br>
+<button (click)="actualizarProvincia(provincia.id)" class="btn btn-info" style="margin-left: 10px">Editar</button>

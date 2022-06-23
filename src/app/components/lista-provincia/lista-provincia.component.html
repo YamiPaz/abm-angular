@@ -1,0 +1,40 @@
+
+<div class="panel panel-primary">
+  
+    <div class="panel-heading">
+      <h2>Provincias Argentinas</h2>
+    </div>
+    
+    <div class="panel-body">
+
+      <div class="input-group">
+        <input type="text" class="form-control rounded" placeholder="Buscar por nombre de provincia" aria-label="Search" aria-describedby="search-addon" [(ngModel)]= 'texto' (keyup)="busqueda()"/>
+        
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+                <th scope="col">Provincia</th>
+                <th scope="col">Abreviatura</th>
+                <th scope="col">Bandera</th>
+                <th scope="col"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let provincia of provincias | async">
+            <td class="text-center">{{provincia.nombre}}</td>
+            <td class="text-center">{{provincia.abreviatura}}</td>           
+            <td>
+                <img src="assets/img/{{provincia.bandera}}" alt="{{provincia.bandera}}">
+            </td>
+
+            <td><button (click)="eliminarProvincia(provincia.id)" class="btn btn-danger">Eliminar</button>
+                <button (click)="detalleProvincia(provincia.id)" class="btn btn-info" style="margin-left: 10px">Detalle</button>
+                <button (click)="actualizarProvincia(provincia.id)" class="btn btn-info" style="margin-left: 10px">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
